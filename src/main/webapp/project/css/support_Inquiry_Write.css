@@ -1,0 +1,182 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.inquiry-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+.inquiry-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+.inquiry-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.inquiry-subtitle::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #666;
+    margin-right: 8px;
+}
+
+.inquiry-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea.form-control {
+    height: 300px;
+    resize: vertical;
+}
+
+.q-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Category Buttons Styles */
+.category-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.category-buttons input[type="radio"] {
+    display: none;
+}
+
+.category-button {
+    flex-grow: 1;
+    margin: 0 5px;
+    padding: 12px 0;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8f8f8;
+    color: #666;
+}
+
+.category-buttons input[type="radio"]:checked + .category-button {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.category-buttons .category-button:hover {
+    background-color: #e0e0e0;
+}
+
+.category-buttons input[type="radio"]:checked + .category-button:hover {
+    background-color: #555;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+.list-button {
+    display: block;
+    width: 200px;
+    padding: 12px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.inquiry-button:hover {
+    background-color: #555;
+}
+
+.inquiry-button {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 100px;
+    padding: 12px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.list-button:hover {
+    background-color: #888;
+}
+
+.relative {
+    position: relative;
+}
+
+.form-control.with-icon {
+    padding-left: 35px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+.divider-line {
+    border-top: 1px solid #ddd;
+    margin: 10px 0 30px 0;
+}

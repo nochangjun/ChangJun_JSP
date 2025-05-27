@@ -1,0 +1,401 @@
+@charset "UTF-8";
+
+.divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #e1e1e1, #ccc, #e1e1e1);
+    margin: 15px 0;
+}
+
+/* 코스 등록 컨테이너 스타일 */
+.course-register-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.course-register-container:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.course-register-container h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    position: relative;
+}
+
+.course-register-container h2:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #000000; /* Changed to black */
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* 입력 행 스타일 */
+.input-row {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.input-row label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 15px;
+}
+
+.input-row input[type="text"],
+.input-row textarea {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s;
+    background-color: #fafbfc;
+}
+
+.input-row input[type="text"]:focus,
+.input-row textarea:focus {
+    border-color: #000000; /* Changed to black */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Black theme focus */
+    outline: none;
+    background-color: #fff;
+}
+
+/* 파일 업로드 영역 */
+.input-row input[type="file"] {
+    display: none;
+}
+
+.upload-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.upload-wrapper .upload-label {
+    flex: 1;
+    padding: 7px 15px;
+    border: 1px solid #e1e1e1;
+    background-color: #fafbfc;
+    border-radius: 8px;
+    margin-right: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    magin-top:-5px;
+    color: #666;
+}
+
+.upload-wrapper button {
+    padding: 12px 20px;
+    cursor: pointer;
+    background-color: #000000; /* Changed to black */
+    color: #fff;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-left: 3px;
+}
+
+.upload-wrapper button:hover {
+    background-color: #333333; /* Slightly lighter black for hover */
+}
+
+/* 태그 테이블 */
+table.tag-table {
+    width: 100%;
+    border-spacing: 0;
+    margin-top: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+table.tag-table th,
+table.tag-table td {
+    border: 1px solid #e5e7eb;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table.tag-table th {
+    background-color: #f7f9fc;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.add-row {
+    text-align: center;
+    color: #000000; /* Changed to black */
+    cursor: pointer;
+    padding: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.add-row:hover {
+    background-color: #e5e5e5; /* Light gray for hover */
+}
+
+/* 음식점(가게) 테이블 */
+table.store-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+table.store-table th,
+table.store-table td {
+    border: 1px solid #e5e7eb;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table.store-table th {
+    background-color: #f7f9fc;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.delete-btn {
+    cursor: pointer;
+    color: #000000; /* Changed to black */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.delete-btn:hover {
+    color: #333333; /* Slightly lighter black for hover */
+    text-decoration: underline;
+}
+
+/* 가게 선택 버튼 */
+.input-row button[type="button"] {
+    padding: 11px 18px;
+    background-color: #000000; /* Changed to black */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.input-row button[type="button"]:hover {
+    background-color: #333333; /* Slightly lighter black for hover */
+}
+
+/* 등록 버튼 */
+.submit-btn {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px 0;
+    background-color: #000000; /* Changed to black */
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn:hover {
+    background-color: #333333; /* Slightly lighter black for hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border: none;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    animation: modalOpen 0.3s ease;
+}
+
+@keyframes modalOpen {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+    color: #888;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #000000; /* Changed to black */
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#restaurantSearch {
+    width: 70%;
+    padding: 12px 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px 0 0 8px;
+    font-size: 15px;
+}
+
+#restaurantSearch:focus {
+    border-color: #000000; /* Changed to black */
+    outline: none;
+}
+
+.modal button {
+    padding: 12px 20px;
+    background-color: #000000; /* Changed to black */
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modal button:hover {
+    background-color: #333333; /* Slightly lighter black for hover */
+}
+
+/* 결과 테이블 (음식점 검색 결과) */
+.result-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.result-table th,
+.result-table td {
+    border: 1px solid #e5e7eb;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.result-table th {
+    background-color: #f7f9fc;
+    font-weight: 600;
+    color: #555;
+}
+
+.result-table tr:hover {
+    background-color: #f7f9fc;
+}
+
+.result-table td a {
+    color: #000000; /* Changed to black */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.result-table td a:hover {
+    color: #333333; /* Slightly lighter black for hover */
+    text-decoration: underline;
+}
+
+/* 네이버 지도 영역 (모달 내) */
+#restaurantSelectMap,
+#modalMap {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+}
+
+/* 이모지 스타일링 */
+.input-row label:has(emoji) {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .upload-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .upload-wrapper .upload-label {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+    
+    .upload-wrapper button {
+        width: 100%;
+        border-radius: 8px;
+    }
+    
+    #restaurantSearch {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .modal button {
+        width: 100%;
+        border-radius: 8px;
+    }
+}

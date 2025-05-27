@@ -1,0 +1,382 @@
+/* 모든 스타일에 헤더 스코프 추가 */
+.yummy-header-container {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    z-index: 1000;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* 내부 로고, 메뉴, 버튼 정렬 */
+.yummy-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    gap: 40px;
+}
+
+/* 왼쪽 로고 */
+.yummy-header-left .yummy-logo {
+    font-size: 38px;
+    font-weight: 800;
+    color: #FF8A3D;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    transition: transform 0.3s ease;
+}
+
+.yummy-header-left a {
+    text-decoration: none;
+    display: block;
+}
+
+.yummy-header-left a:hover .yummy-logo {
+    transform: scale(1.02);
+    color: #FF7020;
+}
+
+/* 중앙 메뉴 리스트 */
+.yummy-header-center {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.yummy-header-center .yummy-menu-list {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    height: 100%;
+}
+
+.yummy-menu-item {
+    position: relative;
+}
+
+.yummy-menu-item > a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 12px 5px;
+    display: block;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.yummy-menu-item > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.yummy-menu-item:hover > a {
+    color: #333;
+}
+
+.yummy-menu-item:hover > a::after {
+    width: 100%;
+    opacity: 1;
+}
+
+/* 서브메뉴 통합 컨테이너 - 호버 방식으로 복원 */
+.yummy-submenu-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+    overflow: hidden;
+    padding: 30px 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); /* 올라간 상태에서 시작 */
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+/* 헤더에 마우스를 올렸을 때 서브메뉴 표시 */
+/* 서브메뉴 링크에 마우스를 올렸을 때도 서브메뉴가 유지되도록 */
+.yummy-header-container:hover .yummy-submenu-container,
+.yummy-submenu-container:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* 자연스럽게 내려옴 */
+}
+
+.yummy-header-container:hover .yummy-submenu-item a,
+.yummy-submenu-container:hover .yummy-submenu-item a {
+    opacity: 1;
+}
+
+.yummy-submenu-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.yummy-submenu-column {
+    flex: 1;
+    min-width: 160px;
+}
+
+.yummy-submenu-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #333;
+}
+
+.yummy-submenu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.yummy-submenu-item a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    display: block;
+    padding: 8px 0;
+    transition: all 0.1s ease;
+    font-weight: 500;
+    opacity: 0;
+}
+
+.yummy-submenu-item a:hover {
+    color: #FF8A3D;
+    transform: translateX(5px);
+}
+
+/* 기존 서브메뉴는 통합 컨테이너로 처리하므로 숨김 처리 */
+.yummy-menu-item .yummy-sub {
+    display: none;
+}
+
+/* 모바일에서는 기존 스타일 사용 */
+@media (max-width: 768px) {
+    .yummy-submenu-container {
+        display: none !important;
+    }
+    
+    /* 서브메뉴 스타일 - 모바일용 */
+    .yummy-menu-item .yummy-sub {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        border-radius: 8px;
+        z-index: 999;
+        padding: 12px 0;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .yummy-menu-item:hover .yummy-sub {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .yummy-menu-item .yummy-sub li {
+        width: 100%;
+    }
+
+    .yummy-menu-item .yummy-sub a {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        display: block;
+        padding: 10px 24px;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+
+    .yummy-menu-item .yummy-sub a:hover {
+        color: #FF8A3D;
+        background-color: rgba(255, 138, 61, 0.05);
+    }
+}
+
+/* 오른쪽 버튼/아이콘 */
+.yummy-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.yummy-header-btn.yummy-loginout-btn {
+    all: unset;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 9px 18px;
+    border-radius: 50px;
+    background-color: #f8f8f8;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yummy-header-btn.yummy-loginout-btn:hover {
+    background-color: #333 ;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: #333;
+}
+
+.yummy-header-container a {
+    text-decoration: none;
+}
+
+.yummy-header-icon {
+    background-color: #f8f8f8;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.yummy-header-icon:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.yummy-header-icon img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+.yummy-header-icon:hover img {
+    transform: scale(1.1);
+}
+
+/* 환영 메시지 스타일 */
+.yummy-welcome-message {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 6px 12px;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.yummy-welcome-message strong {
+    color: #FF8A3D;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+/* 로그인 알림 모달 */
+#yummy-loginAlertModal > div {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 350px;
+    background: linear-gradient(to bottom right, #ffffff, #fafafa);
+}
+
+#yummy-loginAlertModal button {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 12px 20px;
+    font-size: 14px;
+}
+
+#yummy-loginAlertModal button:first-of-type {
+    background-color: #FF8A3D;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 138, 61, 0.2);
+}
+
+#yummy-loginAlertModal button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notice-dot {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1024px) {
+    .yummy-header-center .yummy-menu-list {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .yummy-header-inner {
+        padding: 12px 15px;
+    }
+    
+    .yummy-header-left .yummy-logo {
+        font-size: 32px;
+    }
+    
+    .yummy-header-right {
+        gap: 8px;
+    }
+    
+    .yummy-welcome-message {
+        display: none;
+    }
+}

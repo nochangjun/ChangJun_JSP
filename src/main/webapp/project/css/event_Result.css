@@ -1,0 +1,304 @@
+/* event_Result.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+/* 이벤트 컨테이너 스타일 */
+.event-container {
+    max-width: 1000px;
+    margin: 50px auto 145px;
+    padding: 0 20px;
+}
+
+/* 이벤트 타이틀 스타일 */
+.event-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 130px;
+    color: #333;
+}
+
+/* 이벤트 탭 스타일 */
+.event-tabs {
+    display: flex;
+    border-bottom: 2px solid #333;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.event-tabs .tab {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #777;
+    position: relative;
+    flex: 1;
+    text-align: center;
+    max-width: 130px;
+    transition: all 0.3s ease;
+}
+
+.event-tabs .tab:hover {
+    color: #333;
+}
+
+.event-tabs .tab.active {
+    color: #000;
+    font-weight: 700;
+    background-color: #f8f8f8;
+}
+
+.event-tabs .tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+}
+
+/* 당첨자 발표 테이블 스타일 */
+.event-result-table {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.event-result-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent; /* 배경색 투명하게 변경 */
+}
+
+.event-result-table th,
+.event-result-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.event-result-table th {
+    background-color: transparent;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+}
+
+.event-result-table th.column-title {
+    width: 80%;
+    text-align: center !important;
+}
+
+.event-result-table th.column-date {
+    width: 20%;
+    text-align: center;
+}
+
+.event-result-table td.column-title {
+    text-align: left;
+    padding-left: 30px;
+    max-width: 0; /* 중요: 너비 제한 및 text-overflow 적용을 위해 필요 */
+}
+
+.event-result-table td.column-date {
+    color: #666;
+    text-align: center;
+}
+
+.event-result-table td.column-title a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.event-result-table td.column-title a:hover {
+    color: #ff6b6b;
+}
+
+.event-result-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.event-result-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.event-result-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 검색 결과 없음 스타일 */
+.no-results {
+    padding: 30px 0;
+    text-align: center;
+    color: #666;
+    background-color: transparent; /* 배경색 투명하게 변경 */
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.pagination ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+.pagination li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    color: #666;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pagination li a:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination li.active a {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+    font-weight: 600;
+}
+
+.pagination li.next a,
+.pagination li.last a {
+    width: auto;
+    padding: 0 15px;
+}
+
+/* 검색창 스타일 */
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 80px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 검색 카테고리 드롭다운 */
+.search-category {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    min-width: 120px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 30px;
+}
+
+/* 검색 입력창 */
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+    min-width: 200px;
+}
+
+/* 검색 버튼 */
+.search-buttons {
+    padding: 10px 25px;
+    background-color: #333 !important;
+    color: white !important;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.search-buttons:hover {
+    background-color: #222 !important;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .event-result-table .column-date {
+        width: 30%;
+    }
+    
+    .event-result-table .column-title {
+        width: 70%;
+    }
+    
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+    }
+    
+    .search-category, 
+    .search-input,
+    .search-buttons {
+        width: 100%;
+    }
+    
+    .event-tabs .tab {
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    .event-title {
+        font-size: 26px;
+        margin-bottom: 40px;
+        margin-top: 60px;
+    }
+}

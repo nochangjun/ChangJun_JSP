@@ -1,0 +1,375 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 940px;
+  margin: 80px auto 140px;;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+/* 헤더 타이틀 */
+.header-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.header-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background-color: #444444;
+}
+
+/* 상단 - 총 개수, 정렬 기준 */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.top-bar .info {
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.top-bar .sort-options {
+  display: flex;
+  gap: 5px;
+}
+
+.top-bar .sort-options a {
+  text-decoration: none;
+  color: #777;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.top-bar .sort-options a:hover {
+  background-color: #f8f1ea;
+  color: #444444;
+}
+
+.top-bar .sort-options a.active {
+  background-color: #444444;
+  color: white;
+}
+
+/* 목록 전체 스타일 */
+.course-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 22px 0;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.course-item:last-child {
+  border-bottom: none;
+}
+
+/* 이미지 영역 */
+.course-item img {
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.course-item img:hover {
+  transform: scale(1.03);
+}
+
+/* 코스 정보(제목, 부제) */
+.course-info {
+  flex: 1;
+}
+
+.course-info .course-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #222;
+  transition: color 0.2s ease;
+}
+
+.course-item:hover .course-title {
+  color: #444444;
+}
+
+.course-info .course-subtitle {
+  font-size: 0.95rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* 오른쪽 메뉴 영역 (북마크, 공유하기, 기타 메뉴) */
+.course-actions {
+  position: relative;
+  margin-left: 15px;
+}
+
+/* ⋮ 버튼 기본 스타일 */
+.menu-toggle {
+  border: none;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  color: #555;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.menu-toggle:hover {
+  background-color: #eee;
+  color: #444444;
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 10;
+  width: 140px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f8f1ea;
+  color: #444444;
+}
+
+/* 드롭다운 메뉴가 보일 때 */
+.dropdown-menu.show {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  padding-top: 20px;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #666;
+  margin: 0 5px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.pagination a.active {
+  background-color: #444444;
+  color: #fff;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #f8f1ea;
+  color: #444444;
+}
+
+.highlight {
+  color: #444444;
+  font-weight: bold;
+}
+
+.course-item {
+  cursor: pointer;
+}
+
+.course-item:hover {
+  background-color: #fafafa;
+}
+
+/* 모달 스타일 */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 350px;
+  animation: modalPop 0.3s ease;
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-content button:first-of-type {
+  background-color: #444444;
+  color: white;
+}
+
+.modal-content button:first-of-type:hover {
+  background-color: #e55c00;
+}
+
+.modal-content button:last-of-type {
+  background-color: #eee;
+  color: #555;
+}
+
+.modal-content button:last-of-type:hover {
+  background-color: #ddd;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 920px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-item {
+    padding: 15px 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .course-item img {
+    width: 100%;
+    height: 180px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .course-info {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .course-actions {
+    align-self: flex-end;
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 1.8rem;
+  }
+  
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .pagination a {
+    padding: 6px 10px;
+  }
+}

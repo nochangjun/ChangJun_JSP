@@ -1,0 +1,445 @@
+@charset "UTF-8";
+
+.restaurant-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+
+.restaurant-item:hover {
+  background-color: #fff8f2;
+  transform: translateX(5px);
+}
+
+.restaurant-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.restaurant-item:hover::after {
+  width: 4px;
+}
+
+.restaurant-item .thumbnail {
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+
+.restaurant-item:hover .thumbnail {
+  transform: scale(1.05);
+}
+
+.restaurant-item .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.restaurant-item:hover .thumbnail img {
+  transform: scale(1.1);
+}
+
+.restaurant-item .info {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.restaurant-item .info h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.restaurant-item:hover .info h3 {
+  color: var(--primary-color);
+}
+
+.restaurant-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.restaurant-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.restaurant-link:hover::after {
+  width: 100%;
+}
+
+.restaurant-item .info .region {
+  margin: 8px 0;
+  color: var(--text-light);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-item .info .region::before {
+  content: '📍';
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.restaurant-item .tags {
+	color: #333;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.restaurant-item .info{
+  color: var(--primary-color);
+  font-size: 15px;
+  margin: 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.restaurant-item .info .actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.restaurant-item .info .actions span {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.restaurant-item .info .actions span:hover {
+  color: var(--primary-color);
+}
+
+.restaurant-item .info .actions img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+  opacity: 0.7;
+  transition: var(--transition);
+  object-fit: contain; /* 이미지 비율 유지 */
+}
+
+.restaurant-item .info .actions span:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+/* ---------------------------------------------------------------------------------- */
+
+.review-card {
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.review-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+}
+
+.reviewer-avatar {
+    margin-right: 15px;
+}
+
+.reviewer-avatar img.reviewer-profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid white;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.reviewer-stats {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.review-stars {
+    color: #ffc107;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.review-menu-tags {
+    margin-bottom: 10px;
+}
+
+.menu-tag {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: var(--text-color);
+    padding: 6px 12px;
+    margin: 0 4px 4px 0;
+    border-radius: 15px;
+    font-size: 13px;
+    transition: var(--transition);
+}
+
+.menu-tag:hover {
+    background-color: var(--border-color);
+}
+
+.review-content {
+	font-size: 16px;
+    margin: 15px 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-weight: 450; /* 폰트를 조금 진하게 */
+}
+
+.review-images {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.review-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.review-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.review-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.review_like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.review_like img {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.review_like img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.like-count {
+    font-weight: 500;
+}
+
+.review-date {
+    color: var(--text-lighter);
+    font-size: 14px;
+}
+.review-actions{
+	border-top: 1px solid #ddd; /* 상단에만 선 추가 */
+	 padding-top: 10px;          /* 상단 여백 */
+  margin-top: 10px;           /* 위와의 간격 */
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+ .course-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+      position: relative; /* 드롭다운 메뉴 위치 조정을 위해 추가 */
+      cursor: pointer;
+      margin-left: 15px;
+    }
+
+    /* 이미지 영역 */
+    .course-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 6px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    
+    
+
+    /* 코스 정보(제목, 부제) */
+    .course-info {
+      flex: 1; /* 중간을 가득 채울 수 있도록 */
+    }
+
+    .course-info .course-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .course-info .course-subtitle {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* 오른쪽 메뉴 영역 (북마크, 공유하기, 기타 메뉴) */
+    .course-actions {
+      position: relative;  /* 드롭다운 메뉴 위치 조정을 위해 추가 */
+    }
+    
+    /* 효과를 위한 추가 스타일 */
+.course-item {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* hover 시 배경색 변경 및 오른쪽으로 살짝 이동 */
+.course-item:hover {
+  background-color: #fff8f2;  /* 원하는 효과 배경색 */
+  transform: translateX(5px);
+}
+
+.course-item:hover::after {
+  width: 4px;
+}
+
+/* 이미지 확대 효과 */
+.course-item img {
+  transition: transform 0.3s ease;
+}
+
+.course-item:hover img {
+  transform: scale(1.05);
+}
+ /* ------------------------------------------------------------------------------------------ */
+ .inq-table td[onclick] {
+    cursor: pointer;
+}
+
+.inq-table td[onclick]:hover {
+    text-decoration: underline;
+    background-color: #f5f5f5;
+}
+
+.inq-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.inq-table th, 
+.inq-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.inq-table th {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+/* --------------------------------------------------------------- */
+/* 페이지네이션 컨테이너 설정 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* 기본 페이지 버튼 스타일 */
+.pagination .page-btn {
+  background-color: #f9f9f9;      /* 밝은 배경색 */
+  border: 1px solid #ddd;         /* 얇은 테두리 */
+  border-radius: 6px;             /* 모서리 둥글게 */
+  margin: 0 5px;                  /* 버튼 간 간격 */
+  padding: 10px 15px;             /* 내부 여백 */
+  font-size: 16px;
+  color: #333;                    /* 글자 색상 */
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* hover 시 버튼 스타일 */
+.pagination .page-btn:hover {
+  background-color: #e9e9e9;
+  border-color: #bbb;
+}
+
+/* 활성화된(active) 버튼 스타일 */
+.pagination .page-btn.active {
+  background-color: #007BFF;
+  border-color: #007BFF;
+  color: #fff;                    /* 활성화 상태에서 글자 색상 흰색 */
+}
+
+

@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+     margin-top: 100px;
+}
+
+h1 {
+    border-bottom: none; /* 밑줄 제거 */
+}
+
+.profile-section {
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.profile-img {
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border-right: 1px solid #eee;
+}
+
+.profile-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-img p {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+}
+
+.stats-section {
+    flex: 1;
+    padding: 15px;
+}
+
+.section-title {
+    padding: 10px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stats-item {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.stats-item span {
+    color: #ff8c00;
+    font-weight: 500;
+}
+
+.favorite-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* '리뷰를 남긴 맛집을 확인할 수 있습니다'를 소제목처럼 보이게 스타일 적용 */
+.favorite-section h2 small {
+    font-size: 14px;
+    font-weight: normal;
+    color: #888; /* 색상을 살짝 연하게 */
+    display: inline-block; /* 옆에 붙도록 설정 */
+    margin-left: 10px; /* 제목과 간격 추가 */
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+   	font-size: 15px;
+}
+
+.tab.active {
+    border-bottom: 3px solid #ff8c00;
+    font-weight: 500;
+}
+
+.empty-notice {
+    text-align: center;
+    padding: 50px 0;
+    color: #888;
+     margin-bottom: 100px;
+}
+
+.empty-notice i {
+    font-size: 48px;
+    color: #ddd;
+    margin-bottom: 15px;
+    display: block;
+}

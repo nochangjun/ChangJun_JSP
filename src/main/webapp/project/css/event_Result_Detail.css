@@ -1,0 +1,201 @@
+/* event_Result_Detail.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+/* 이벤트 컨테이너 스타일 */
+.event-container {
+    max-width: 1000px;
+    margin: 50px auto 145px;
+    padding: 0 20px;
+}
+
+/* 이벤트 타이틀 스타일 */
+.event-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 130px;
+    color: #333;
+}
+
+/* 이벤트 탭 스타일 */
+.event-tabs {
+    display: flex;
+    border-bottom: 2px solid #333;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.event-tabs .tab {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #777;
+    position: relative;
+    flex: 1;
+    text-align: center;
+    max-width: 130px;
+    transition: all 0.3s ease;
+}
+
+.event-tabs .tab:hover {
+    color: #333;
+}
+
+.event-tabs .tab.active {
+    color: #000;
+    font-weight: 700;
+    background-color: #f8f8f8;
+}
+
+.event-tabs .tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+}
+
+/* 상세 페이지 스타일 */
+.event-detail-container {
+    background-color: transparent;
+    margin-bottom: 40px;
+}
+
+.event-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 변경: 긴 제목이 있을 때 상단 정렬 */
+    padding: 0 0 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.event-detail-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    flex: 1;
+    margin-right: 20px;
+    margin-left:10px;
+    line-height: 1.4;
+    
+    /* 제목이 길 때 처리 */
+    display: inline-block;
+    max-width: calc(100% - 120px); /* 날짜 부분 너비 고려 */
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+/* 너무 긴 제목을 모바일에서 처리하기 위한 설정 */
+@media (max-width: 600px) {
+    .event-detail-title {
+        max-width: 100%;
+    }
+}
+
+.event-detail-date {
+    color: #666;
+    font-size: 14px;
+    white-space: nowrap;
+    min-width: 100px;
+    text-align: right;
+}
+
+.event-detail-content {
+    padding: 0;
+    line-height: 1.6;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 80px;
+    color: #444;
+    font-size: 15px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.event-detail-content p {
+    margin-bottom: 15px;
+}
+
+.event-detail-content img,
+.event-detail-content iframe,
+.event-detail-content table {
+    max-width: 100%;
+    height: auto;
+}
+
+.event-winners {
+    margin-top: 25px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+}
+
+.winner-list {
+    line-height: 1.8;
+}
+
+.event-detail-buttons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 40px;
+    margin-top: 60px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #222;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .event-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .event-detail-title {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+        max-width: 100%;
+    }
+    
+    .event-detail-date {
+        margin-top: 5px;
+        text-align: left;
+    }
+    
+    .event-tabs .tab {
+        padding: 10px;
+        font-size: 16px;
+    }
+}

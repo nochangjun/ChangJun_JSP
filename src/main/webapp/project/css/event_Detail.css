@@ -1,0 +1,232 @@
+/* event_Detail.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+/* 이벤트 컨테이너 스타일 */
+.event-detail-container {
+    max-width: 1000px;
+    margin: 80px auto 145px;
+    padding: 0 20px;
+}
+
+/* 이벤트 메인 타이틀 스타일 */
+.event-main-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 130px;
+    color: #333;
+}
+
+/* 이벤트 탭 스타일 */
+.event-tabs {
+    display: flex;
+    border-bottom: 2px solid #333;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.event-tabs .tab {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #777;
+    position: relative;
+    flex: 1;
+    text-align: center;
+    max-width: 130px;
+    transition: all 0.3s ease;
+}
+
+.event-tabs .tab:hover {
+    color: #333;
+}
+
+.event-tabs .tab.active {
+    color: #000;
+    font-weight: 700;
+    background-color: #f8f8f8;
+}
+
+.event-tabs .tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+}
+
+/* 상세 페이지 헤더 스타일 */
+.event-header {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.event-tag {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* 이벤트 상태별 색상 */
+.event-tag.upcoming {
+    background-color: #ffc107; /* 노란색 - 예정 */
+}
+
+.event-tag.ongoing {
+    background-color: #ff6b6b; /* 빨간색 - 진행중 */
+}
+
+.event-tag.ended {
+    background-color: #333; /* 검은색 - 종료 */
+}
+
+.event-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+.event-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    margin-bottom: 40px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-image:before {
+    content: '👤';
+    font-size: 18px;
+}
+
+.event-author {
+    font-size: 14px;
+    color: #555;
+}
+
+.event-date, .event-views {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 상세 콘텐츠 스타일 */
+.event-content {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.event-content img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 25px;
+     height: auto; /* 비율 유지하면서 전체 보이도록 */
+  object-fit: contain; /* 이미지가 짤리지 않도록 */
+}
+
+.event-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.event-description p {
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-align: center;        /* 텍스트 가운데 정렬 */
+    margin: 0 auto 15;
+}
+
+/* 목록 버튼 스타일 */
+.list-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.list-button {
+    display: inline-block;
+    padding: 12px 40px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.list-button:hover {
+    background-color: #222;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .event-header {
+        padding: 20px;
+    }
+    
+    .event-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .event-title {
+        font-size: 20px;
+    }
+    
+    .event-description {
+        padding: 20px;
+    }
+    
+    .event-tabs .tab {
+        padding: 10px;
+        font-size: 16px;
+    }
+}

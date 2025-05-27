@@ -1,0 +1,205 @@
+/* 팝업 컨테이너 */
+#noticePopup {
+    position: fixed;
+    top: 0px;
+    right: -350px;
+    width: 355px;
+    min-height: 100%;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    padding: 15px;
+    max-height: 80vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+#noticePopup.show {
+    right: 0px;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#noticeOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+    display: none;
+}
+
+.notice-title-icon {
+    width: 20px;       /* 아이콘 크기 */
+    height: 20px;
+    margin-bottom: 3px;
+    margin-right: 2px; /* 텍스트와 간격 */
+    vertical-align: middle;
+}
+
+.notice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.notice-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.notice-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+    font-size: 14px;
+}
+
+.notice-header button:hover {
+    color: #000;
+}
+
+.notice-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.notice-link:hover .notice-content {
+    text-decoration: underline;
+}
+
+.notice-filter {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.filter-btn {
+    background-color: #f6f6f6;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.notice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notice-login-required {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.notice-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.notice-item:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.notice-item-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.notice-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.notice-source {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.notice-date {
+    color: #888;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.notice-content {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0 0 0;
+}
+
+.notice-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #aaa;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.notice-close:hover {
+    color: #555;
+    background-color: #f5f5f5;
+}
+
+#noticePopup::-webkit-scrollbar {
+    width: 6px;
+}
+
+#noticePopup::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#noticePopup::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+#noticePopup::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+@media (max-width: 576px) {
+    #noticePopup {
+        width: 280px;
+    }
+}

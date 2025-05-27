@@ -1,0 +1,163 @@
+/* 검색 팝업 스타일 */
+.search-popup {
+    position: fixed;         /* 화면 최상단 고정 */
+    top: 0;                  /* 위에서 0 */
+    left: 0;
+    width: 100%;             /* 전체 너비 */
+    background-color: white; /* 배경색 */
+    z-index: 2000;           /* 헤더보다 위에 표시 */
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #ddd;
+}
+
+.search-popup.active {
+    display: block;
+    opacity: 1;
+}
+
+.search-popup-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* 부드러운 팝업 애니메이션 */
+@keyframes popupFadeIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-input-container {
+    flex: 1;
+    display: flex;
+    border-bottom: 2px solid #333;
+    padding-bottom: 3px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    padding: 0;
+    width: 100%;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.close-button {
+    position: absolute;
+	top: 30px;
+	right: 75px;
+	background: transparent;
+	border: none;
+	font-size: 30px;
+	cursor: pointer;
+	padding: 5px;
+}
+
+/* 태그 스타일 */
+.search-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.tag {
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tag:hover {
+    background-color: #e0e0e0;
+}
+
+/* 최근 검색어 스타일 */
+.recent-searches {
+    margin-top: 25px;
+}
+
+.recent-searches-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.recent-searches-header h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.delete-all {
+    background: transparent;
+    border: none;
+    color: #777;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.delete-all img {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+}
+
+.search-terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.search-term {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.term-delete {
+    background: transparent;
+    border: none;
+    color: #999;
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}

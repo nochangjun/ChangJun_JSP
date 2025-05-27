@@ -1,0 +1,399 @@
+/* event.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+/* 이벤트 컨테이너 스타일 */
+.event-container {
+    max-width: 1000px;
+    margin: 50px auto 145px;
+    padding: 0 20px;
+}
+
+/* 이벤트 타이틀 스타일 */
+.event-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 130px;
+    color: #333;
+}
+
+/* 이벤트 탭 스타일 */
+.event-tabs {
+    display: flex;
+    border-bottom: 2px solid #333;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.event-tabs .tab {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #777;
+    position: relative;
+    flex: 1;
+    text-align: center;
+    max-width: 130px;
+    transition: all 0.3s ease;
+}
+
+.event-tabs .tab:hover {
+    color: #333;
+}
+
+.event-tabs .tab.active {
+    color: #000;
+    font-weight: 700;
+    background-color: #f8f8f8;
+}
+
+.event-tabs .tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+}
+
+/* 이벤트 상태 필터 스타일 */
+.event-status-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 15px;
+}
+
+.event-status-filter a {
+    padding: 8px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #666;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.event-status-filter a:hover {
+    background-color: #f0f0f0;
+}
+
+/* 상태별 색상 */
+.event-status-filter a.active[href*="예정"] {
+    background-color: #ffc107; /* 노란색 - 예정 */
+    color: #333; /* 더 어두운 텍스트 색상 */
+    border-color: #ffc107;
+}
+
+.event-status-filter a.active[href*="진행중"] {
+    background-color: #ff6b6b; /* 빨간색 - 진행중 */
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.event-status-filter a.active[href*="종료"] {
+    background-color: #333; /* 검은색 - 종료 */
+    color: white;
+    border-color: #333;
+}
+
+/* 이벤트 리스트 스타일 */
+.event-list {
+    margin-bottom: 40px;
+}
+
+.event-row {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 30px;
+    min-height: 300px; /* 최소 높이 설정 */
+}
+
+/* 이벤트 아이템 링크 스타일 */
+.event-item-link {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    max-width: calc(50% - 15px); /* 두 개가 나란히 있을 때의 너비 */
+    width: calc(50% - 15px); /* 최대 너비와 동일하게 설정 */
+}
+
+/* 하나만 있을 때도 동일한 위치와 크기 */
+.event-row .event-item-link:only-child {
+    margin-right: auto;
+}
+
+.event-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%; /* 높이 100%로 설정 */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-item:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* 이벤트 상태별 색상 */
+.event-status.upcoming {
+    background-color: #ffc107; /* 노란색 - 예정 */
+}
+
+.event-status.ongoing {
+    background-color: #ff6b6b; /* 빨간색 - 진행중 */
+}
+
+.event-status.ended {
+    background-color: #333; /* 검은색 - 종료 */
+}
+
+.event-info {
+    padding: 20px;
+    flex-grow: 1; /* 남은 공간 차지 */
+    display: flex;
+    flex-direction: column;
+}
+
+.event-name {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    color: #333;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.event-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    flex-grow: 1; /* 남은 공간 차지 */
+    height: 42px; /* 2줄로 고정 */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.event-date {
+    font-size: 13px;
+    color: #888;
+    margin-top: auto; /* 하단에 배치 */
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.pagination ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+.pagination li {
+    margin: 0;
+}
+
+.pagination li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    color: #666;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pagination li a:hover {
+    background-color: #f0f0f0;
+}
+
+.pagination li.active a {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+    font-weight: 600;
+}
+
+.pagination li.next a,
+.pagination li.last a {
+    width: auto;
+    padding: 0 15px;
+}
+
+/* 검색창 스타일 */
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 80px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 검색 카테고리 드롭다운 */
+.search-category {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    min-width: 120px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 30px;
+}
+
+/* 검색 입력창 */
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+    min-width: 200px;
+}
+
+/* 검색 버튼 */
+.search-buttons {
+    padding: 10px 25px;
+    background-color: #333 !important;
+    color: white !important;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.search-buttons:hover {
+    background-color: #222 !important;
+}
+
+/* 결과 없음 메시지 스타일 */
+.no-results {
+    text-align: center;
+    padding: 40px 0;
+    color: #666;
+    font-size: 16px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .event-row {
+        flex-direction: column;
+        gap: 20px;
+        min-height: unset;
+    }
+    
+    .event-item-link {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .event-image {
+        height: 150px;
+    }
+    
+    .search-box {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+    }
+    
+    .search-category, 
+    .search-input,
+    .search-buttons {
+        width: 100%;
+    }
+    
+    .event-status-filter {
+        flex-wrap: wrap;
+    }
+    
+    .event-tabs .tab {
+        padding: 10px;
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,411 @@
+@charset "UTF-8";
+
+/* 스코프 밖 기본 초기화만 유지 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+/* my-common-scope 클래스로 스코프 설정 */
+.my-common-scope .container {
+    width: 750px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.my-common-scope h1 {
+    font-size: 26px;
+    margin: 100px 0 20px;
+    font-weight: bold;
+}
+
+.my-common-scope .content-wrapper {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.my-common-scope .sidebar {
+    width: 170px;
+    border-right: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.my-common-scope .sidebar ul {
+    list-style: none;
+}
+
+.my-common-scope .sidebar li {
+    padding: 12px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.my-common-scope .sidebar li.active {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+.my-common-scope .main-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 17px;
+}
+
+.my-common-scope .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.my-common-scope .section-title h2 {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.my-common-scope .section-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.my-common-scope .form-group {
+    display: flex;
+    align-items: center;  /* 🔥 핵심: 세로 중앙 정렬로 통일 */
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.my-common-scope .form-label {
+    font-size: 16px;
+    line-height: 40px; /* input과 높이 맞추기 */
+}
+
+.my-common-scope .pw-form-label {
+    min-width: 130px;
+}
+
+.my-common-scope .profile-form-label {
+    min-width: 50px;
+}
+
+.my-common-scope .store-form-label {
+    min-width: 90px;
+}
+
+.my-common-scope .form-control {
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    box-sizing: border-box;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.my-common-scope .form-control-store {
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px;
+    box-sizing: border-box;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.my-common-scope .btn {
+    height: 40px;
+    line-height: 1;
+    padding: 0 20px;
+    border: 1px solid #ccc;
+    background-color: #4a4a4a;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.my-common-scope .btn + .btn {
+    margin-left: 8px; /* 바로 앞에 다른 버튼이 있을 때만 여백 줌 */
+}
+
+.my-common-scope .btn-area {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.my-common-scope .btn-cancel {
+    background-color: #777;
+}
+
+.my-common-scope .verify-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.my-common-scope .verify-description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.my-common-scope .verify-input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* 간격 조절 */
+    
+     /* 네모 박스 스타일 */
+    background-color: #F2F2F2;         /* 연한 회색 배경 */
+    border: 1px solid #ccc;            /* 테두리 */
+    border-radius: 4px;                /* 둥근 모서리 */
+    padding: 30px;                /* 내부 여백 */
+    width: fit-content;                /* 내용에 맞게 크기 설정 */
+    margin: 30px auto 0 auto;          /* 가운데 정렬 */
+}
+
+.my-common-scope .verify-label {
+    font-size: 16px;
+    text-align: right;
+}
+
+.my-common-scope .verify-input {
+    height: 40px;
+    padding: 8px 12px;
+    margin-left: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    box-sizing: border-box;
+}
+
+.my-common-scope .withdraw-title {
+	font-weight: bold; 
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.my-common-scope .withdraw-notice {
+    list-style: none;
+    padding-left: 0;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.my-common-scope .withdraw-notice li {
+    margin-bottom: 6px;
+}
+
+.my-common-scope .withdraw-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.my-common-scope .vertical-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #F2F2F2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.my-common-scope .image-upload-box {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 16px;
+    background-color: #fafafa;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.my-common-scope .preview-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px;
+    position: relative;
+}
+
+.my-common-scope .preview-placeholder {
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    font-size: 40px;
+    color: #bbb;
+    border: 1px dashed #ddd;
+    border-radius: 4px;
+}
+
+.my-common-scope .preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.my-common-scope .image-upload-btn {
+    background-color: #FAE0D4;
+    color: #8E7468;
+    padding: 8px 16px;
+    border: 1px solid #FAE0D4;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.my-common-scope .image-upload-btn:hover {
+    background-color: #FAD4C8;
+}
+
+.my-common-scope .main-content.center-align {
+    align-items: center;
+}
+
+.my-common-scope .info-msg {
+	font-size: 12px;
+	color: gray;
+	margin-top: 2px;
+}
+
+.my-common-scope .info-msg.error {
+    color: red;
+}
+
+.my-common-scope .info-msg.success {
+    color: green;
+}
+
+.my-common-scope .icon-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.my-common-scope .form-group input.form-control {
+    flex: 1;
+}
+
+.my-common-scope .form-group.horizontal {
+    display: flex;
+	align-items: flex-start; /* 상단 정렬로 맞춰줌 */
+
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.my-common-scope .form-group.horizontal .form-label {
+    width: 100px; /* 라벨 고정 */
+    line-height: 40px;
+}
+
+.my-common-scope .input-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	max-width: 400px;
+}
+
+.my-common-scope .input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.my-common-scope .password-input {
+    padding-right: 35px;  /* 아이콘 공간 확보 */
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.my-common-scope .eye-toggle {
+    position: absolute;
+    top: 40%;
+    right: 1px;
+    transform: translateY(-50%);
+    margin-top: 2px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #888;
+    z-index: 10;
+}
+
+.my-common-scope .msg-wrapper {
+    margin-top: 4px;
+    padding-left: 2px;
+}
+
+.my-common-scope .check-btn {
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid #777;
+    background-color: #777;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.my-common-scope .check-btn:hover {
+    background-color: #666;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 600px) {
+    .my-common-scope .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .my-common-scope .form-label {
+        margin-bottom: 6px;
+        line-height: 1.5;
+    }
+
+    .my-common-scope .btn {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .my-common-scope .btn + .btn {
+        margin-left: 0;
+    }
+}

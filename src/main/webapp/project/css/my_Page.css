@@ -1,0 +1,562 @@
+/* my_Page.css - 스코프 적용으로 다른 CSS와 충돌 방지 */
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.my-page-wrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.my-page-wrapper {
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.my-page-wrapper h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    color: #333;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.my-page-wrapper h1:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #444444;
+}
+
+.my-page-wrapper .profile-section {
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.my-page-wrapper .profile-section:hover {
+    transform: translateY(-5px);
+}
+
+.my-page-wrapper .profile-img {
+    width: 280px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border-right: 1px solid #eee;
+}
+
+.my-page-wrapper .profile-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.my-page-wrapper .profile-img img:hover {
+    transform: scale(1.05);
+}
+
+.my-page-wrapper .profile-img p {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.my-page-wrapper .stats-section {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-page-wrapper .section-title {
+    padding: 12px 15px;
+    background-color: #ff8a3d;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 140, 0, 0.2);
+}
+
+.my-page-wrapper .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.my-page-wrapper .stats-item {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #444444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.my-page-wrapper .stats-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.my-page-wrapper .stats-item span {
+    color: #444444;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.my-page-wrapper .favorite-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    color: #333;
+}
+
+.my-page-wrapper .favorite-section h2 small {
+    font-size: 14px;
+    font-weight: normal;
+    color: #888;
+    display: inline-block;
+    margin-left: 15px;
+    line-height: 1.4;
+}
+
+.my-page-wrapper .tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 25px;
+    background-color: white;
+    border-radius: 8px 8px 0 0;
+    padding: 0 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.my-page-wrapper .tab {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+    position: relative;
+}
+
+.my-page-wrapper .tab:hover {
+    color: #444444;
+}
+
+.my-page-wrapper .tab.active {
+    border-bottom: 3px solid #444444;
+    color: #444444;
+    font-weight: 600;
+}
+
+.my-page-wrapper .tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid white;
+}
+
+.my-page-wrapper .data-content {
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    min-height: 300px;
+}
+
+.my-page-wrapper .empty-notice {
+    text-align: center;
+    padding: 60px 0;
+    color: #888;
+    margin-bottom: 100px;
+}
+
+.my-page-wrapper .empty-notice i {
+    font-size: 64px;
+    color: #ddd;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* 페이지네이션 스타일 */
+.my-page-wrapper .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.my-page-wrapper .page-btn {
+    margin: 0 5px;
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #555;
+}
+
+.my-page-wrapper .page-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #ccc;
+}
+
+.my-page-wrapper .page-btn.active {
+    background-color: #444444;
+    color: white;
+    border-color: #444444;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(255, 140, 0, 0.2);
+}
+
+/* 레스토랑 카드 스타일 */
+.my-page-wrapper .restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.my-page-wrapper .restaurant-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.my-page-wrapper .restaurant-card:hover {
+    transform: translateY(-5px);
+}
+
+.my-page-wrapper .restaurant-img {
+    height: 160px;
+    overflow: hidden;
+}
+
+.my-page-wrapper .restaurant-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.my-page-wrapper .restaurant-img img:hover {
+    transform: scale(1.05);
+}
+
+.my-page-wrapper .restaurant-info {
+    padding: 15px;
+}
+
+.my-page-wrapper .restaurant-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.my-page-wrapper .restaurant-address {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.my-page-wrapper .restaurant-rating {
+    display: flex;
+    align-items: center;
+    color: #444444;
+    font-weight: 600;
+}
+
+.my-page-wrapper .restaurant-rating .star {
+    margin-right: 5px;
+}
+
+/* 코스 카드 스타일 */
+.my-page-wrapper .course-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.my-page-wrapper .course-card:hover {
+    transform: translateY(-3px);
+}
+
+.my-page-wrapper .course-img {
+    width: 120px;
+    min-width: 120px;
+    overflow: hidden;
+}
+
+.my-page-wrapper .course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.my-page-wrapper .course-info {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.my-page-wrapper .course-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.my-page-wrapper .course-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.my-page-wrapper .course-spots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.my-page-wrapper .course-spot {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* 리뷰 리스트 스타일 */
+.my-page-wrapper .review-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.my-page-wrapper .review-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.my-page-wrapper .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.my-page-wrapper .review-restaurant {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.my-page-wrapper .review-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.my-page-wrapper .review-content {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.my-page-wrapper .review-rating {
+    margin-top: 10px;
+    color: #444444;
+}
+
+/* 문의 리스트 스타일 */
+.my-page-wrapper .inquiry-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.my-page-wrapper .inquiry-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.my-page-wrapper .inquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.my-page-wrapper .inquiry-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.my-page-wrapper .inquiry-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.my-page-wrapper .inquiry-content {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.my-page-wrapper .inquiry-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.my-page-wrapper .status-pending {
+    background-color: #ffecb3;
+    color: #e65100;
+}
+
+.my-page-wrapper .status-answered {
+    background-color: #e3f2fd;
+    color: #0277bd;
+}
+
+/* 로딩 스피너 스타일 */
+.my-page-wrapper .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.my-page-wrapper .loading-spinner i {
+    color: #444444;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 900px) {
+    .my-page-wrapper .profile-section {
+        flex-direction: column;
+    }
+    
+    .my-page-wrapper .profile-img {
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .my-page-wrapper .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .my-page-wrapper .tabs {
+        flex-wrap: wrap;
+    }
+    
+    .my-page-wrapper .tab {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .my-page-wrapper .container {
+        padding: 20px 15px;
+    }
+    
+    .my-page-wrapper h1 {
+        font-size: 24px;
+    }
+    
+    .my-page-wrapper .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .my-page-wrapper .section-title {
+        font-size: 14px;
+    }
+    
+    .my-page-wrapper .restaurant-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .my-page-wrapper .favorite-section h2 {
+        font-size: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .my-page-wrapper .favorite-section h2 small {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}

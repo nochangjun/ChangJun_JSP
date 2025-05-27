@@ -1,0 +1,188 @@
+/* ----------------------
+   기본 스타일
+----------------------- */
+
+/* 전체 컨테이너 : 너비 고정, 왼쪽 정렬 */
+.container {
+    width: 1200px;         /* 필요에 따라 고정/유동적으로 조절 */
+    margin: 0 auto;             /* 좌우 자동 여백 제거 */
+    padding: 20px;
+    font-family: sans-serif;
+    color: #333;
+    text-align: left;      /* 전체적으로 왼쪽 정렬 */
+}
+
+/* 상단 검색결과 영역 */
+.search-top {
+    margin-bottom: 20px;
+}
+/* 제목 (검색결과) */
+.search-title {
+    font-size: 24px;       /* 좀 더 크게 */
+    margin: 0 0 5px;
+    font-weight: bold;
+}
+/* 검색어, 검색결과 개수 표시 */
+.search-info {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+/* 검색어 강조 색상 */
+.keyword {
+    color: #f60;           /* 주황색 */
+    font-weight: bold;
+}
+/* 검색결과 개수 강조 */
+.count {
+    font-weight: bold;
+    color: #333;           /* 필요시 주황색으로 바꿔도 됨 */
+}
+
+/* 구분선 */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 15px 0;
+}
+
+/* ----------------------
+   탭 메뉴 (중앙 정렬)
+----------------------- */
+.tab-area {
+    margin-bottom: 10px;
+    text-align: center;    /* 부모 요소를 텍스트 기준 중앙 정렬 */
+}
+.tab-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    /* inline-flex 사용 -> 상위 요소의 text-align: center에 의해 중앙 정렬 */
+    display: inline-flex;
+    border-bottom: 1px solid #ddd;
+}
+.tab-menu li {
+    padding: 10px 15px;
+    margin-right: 2px;
+}
+.tab-menu li:last-child {
+    margin-right: 0;
+}
+.tab-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+.tab-menu li.active {
+    border-bottom: 3px solid #f60;
+    font-weight: bold;
+}
+
+/* ----------------------
+   검색 결과 리스트
+----------------------- */
+.result-title {
+    font-size: 20px;       /* 기본 제목 폰트 크기 */
+    margin: 20px 0 10px;
+    font-weight: bold;
+}
+
+.result-label {
+    font-size: 24px;       /* '음식점' 부분만 조금 더 크게 표시 */
+}
+
+/* 결과 개수 주황색 */
+.result-count {
+    font-size: 18px;
+    color: #f60;           /* 주황색 강조 */
+    margin-left: 5px;
+}
+
+/* 개별 아이템 리스트 */
+.result-list {
+    margin-top: 10px;
+}
+.food-item {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+.food-item:last-child {
+    border-bottom: none;
+}
+.food-img img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+.food-info h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #333;
+}
+.food-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 링크 텍스트 스타일 초기화 */
+.food-info a,
+.food-info a:visited,
+.food-info a:hover,
+.food-info a:active {
+    color: inherit;             /* 원하는 색상으로 변경 */
+    text-decoration: none;   /* 밑줄 제거 */
+}
+
+/* ----------------------
+   페이지네이션 스타일
+----------------------- */
+/* ----------------------
+   페이지네이션 컨테이너
+----------------------- */
+.pagination {
+    display: flex;
+    justify-content: center;    /* 가로 중앙 정렬 */
+    align-items: center;        /* 세로 중앙 정렬 */
+    margin: 20px 0;             /* 위아래 여백 */
+    font-family: inherit;        /* 전체 폰트와 일치 */
+}
+
+/* ----------------------
+   페이지네이션 아이템
+----------------------- */
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+}
+
+/* 기존에 추가하셨던 호버/활성/비활성 스타일 유지 */
+.pagination a:hover {
+    background-color: #f60;
+    color: #fff;
+    border-color: #f60;
+}
+
+.pagination .current {
+    background-color: #f60;
+    color: #fff;
+    border-color: #f60;
+    cursor: default;
+}
+
+.pagination .disabled {
+    color: #999;
+    border-color: #eee;
+    cursor: default;
+}
+
