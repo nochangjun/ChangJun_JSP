@@ -35,3 +35,8 @@ src/main/webapp/*
 # 단, project 폴더와 하위 파일은 포함
 !src/main/java/project/
 !src/main/webapp/project/
+
+# 기타 불필요한 파일/폴더
+open_api.json
+work/
+dir/
