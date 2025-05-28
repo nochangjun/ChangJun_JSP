@@ -1,0 +1,37 @@
+# Eclipse 관련 설정파일 무시
+.classpath
+.project
+.settings/
+
+# 빌드 결과물 (컴파일된 .class 파일이나 자동 생성 폴더들)
+bin/
+build/
+target/
+*.class
+
+# 로그, 임시 파일
+*.log
+*.tmp
+
+# IDE (IntelliJ 등) 관련
+.idea/
+*.iml
+
+# Windows 시스템 파일
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac 시스템 파일
+.DS_Store
+
+# 민감 정보 파일
+.env
+
+# java/webapp 전체 무시
+src/main/java/*
+src/main/webapp/*
+
+# 단, project 폴더와 하위 파일은 포함
+!src/main/java/project/
+!src/main/webapp/project/
