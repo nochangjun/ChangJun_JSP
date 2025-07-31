@@ -3,7 +3,7 @@
 
 <p>
   <!-- gmail -->
-  <img src="https://img.shields.io/badge/ysa8497@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white"/>
+  <img src="https://img.shields.io/badge/zephyros341@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white"/>
   <!-- Tistory -->
   <a href="https://happybplus.tistory.com/"><img src="https://img.shields.io/badge/Tech Blog-000000?style=flat-square&logo=tistory&logoColor=white"/></a>
   <!-- Instagram -->
